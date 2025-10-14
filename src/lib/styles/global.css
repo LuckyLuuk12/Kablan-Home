@@ -1,50 +1,38 @@
-/* Reset most default styling: */
+/* Global styles - working with clean-ui */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    color: var(--color-text-1);
-    scrollbar-gutter: stable;
-    scrollbar-width: none;
-    scrollbar-color: var(--accent-3) var(--background-2);
-}
-html, body {
-    width: 100vw !important;
-    min-height: 100vh !important;
-    overflow-x: hidden;
-    background: var(--gradient-background-2);
-    z-index: -2;
-}
-a {
-    color: transparent;
-    position: relative;
-    background: linear-gradient(to right, var(--accent-2), var(--accent-2));
-    background-clip: text;
-    -webkit-background-clip: text;
-    text-decoration: none;
-    display: inline-block;
-    overflow: hidden;
-    transition: color 0.5s ease;
 }
 
-a:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
+html {
     width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, var(--accent-2), var(--accent-3));
-    transform: translateX(-100%);
-    transition: transform 0.5s ease-in-out;
+    overflow-x: hidden;
 }
-a:hover {
-    background: linear-gradient(to right, var(--accent-2), var(--accent-3));
-    background-clip: text;
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--background);
+    color: var(--text);
 }
-a:hover:after {
-    transform: translateX(0);
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--container);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-400);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-500);
 }
