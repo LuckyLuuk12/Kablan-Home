@@ -1,5 +1,6 @@
 <script lang="ts">
   import Navbar from "$lib/components/Navbar.svelte";
+  import Sidebars from "$lib/components/Sidebars.svelte";
   import { onMount } from 'svelte';
   
   let scrollY = 0;
@@ -48,11 +49,13 @@
 </svelte:head>
 
 <Navbar />
-
-<main class="main-content">
-  <!-- Animated Background -->
-  <div class="bg-gradient" style="transform: translateY({scrollY * 0.5}px)"></div>
-  <div class="bg-overlay"></div>
+<div class="page-wrapper">
+  <Sidebars />
+  
+  <main class="main-content">
+    <!-- Animated Background -->
+    <div class="bg-gradient" style="transform: translateY({scrollY * 0.5}px)"></div>
+    <div class="bg-overlay"></div>
   
   <!-- Hero Section -->
   <section class="hero">
@@ -128,6 +131,7 @@
     </div>
   </section>
 </main>
+</div>
 
 <footer class="footer">
   <div class="footer-container">
@@ -141,6 +145,13 @@
 </footer>
 
 <style>
+  .page-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
   .main-content {
     position: relative;
     width: 100%;
