@@ -1,3 +1,6 @@
+<!-- @component
+no description yet
+-->
 <script lang="ts">
   import type { Site } from "$lib/types";
   import {onMount} from "svelte";
@@ -88,7 +91,7 @@
   }, {} as Record<string, Site[]>);
   
   // Define group display names and order
-  const groupOrder = ["portfolio", "tools", "minecraft", "education", "content", "misc", "other"];
+  const groupOrder = ["minecraft", "tools", "portfolio", "education", "content", "misc", "other"];
   const groupNames: Record<string, string> = {
     portfolio: "Portfolios",
     tools: "Development Tools & Utilities",

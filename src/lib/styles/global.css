@@ -36,3 +36,23 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary-500);
 }
+
+/* Mobile improvements */
+@media (max-width: 768px) {
+    /* Reduce large paddings and heavy backgrounds */
+    body {
+        font-size: 15px;
+    }
+    .hero, .features, .cta {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    /* Hide sidebars on smaller screens for safety */
+    .sidebar, .sidebar-left, .sidebar-right {
+        display: none !important;
+    }
+    /* Make buttons full width for easier tapping */
+    .btn-primary, .btn-secondary, .btn-outline {
+        width: 100% !important;
+    }
+}

@@ -15,25 +15,25 @@
   
   const features = [
     {
-      icon: "fa-solid fa-code",
-      title: "Full-Stack Development",
-      description: "End-to-end web application development using modern frameworks and technologies"
-    },
-    {
-      icon: "fa-solid fa-tools",
-      title: "Developer Tools",
-      description: "Building productivity tools and browser extensions that streamline workflows"
-    },
-    {
-      icon: "fa-solid fa-gamepad",
-      title: "Game Development",
-      description: "Creating game launchers, protocol tools, and interactive experiences"
-    },
-    {
-      icon: "fa-solid fa-rocket",
-      title: "Modern Stack",
-      description: "Leveraging TypeScript, Svelte, React, and cutting-edge cloud platforms"
-    }
+        icon: "fa-solid fa-code",
+        title: "Web Applications",
+        description: "Custom web apps combining clean, intuitive interfaces with powerful backend functionality"
+      },
+      {
+        icon: "fa-solid fa-cube",
+        title: "Minecraft Tools & Plugins",
+        description: "Launchers, plugins, mods, and utilities with deep configurability and seamless user experience"
+      },
+      {
+        icon: "fa-solid fa-toolbox",
+        title: "Developer Utilities",
+        description: "Productivity tools and integrations built with user control and flexibility in mind"
+      },
+      {
+        icon: "fa-solid fa-sliders",
+        title: "Configurability First",
+        description: "Every project emphasizes user customization and control without sacrificing simplicity"
+      }
   ];
   
   const stats = [
@@ -62,15 +62,15 @@
     <div class="hero-container">
       <div class="hero-badge">
         <i class="fa-solid fa-star"></i>
-        Software Engineering Excellence
+        Targeted Software & Tools
       </div>
       <h1 class="hero-title">
-        Building the Future of
-        <span class="gradient-text">Digital Solutions</span>
+        Building dedicated
+        <span class="gradient-text">web apps & tools</span>
       </h1>
       <p class="hero-description">
-        Specializing in full-stack web development, creating modern applications,
-        developer tools, and interactive experiences from concept to deployment
+        I create web applications, developer utilities, and Minecraft tools. Combining intuitive UX 
+        with complex backend functionality while prioritizing configurability and user control.
       </p>
       <div class="hero-actions">
         <a href="/projects" class="btn-primary">
@@ -138,6 +138,10 @@
     <p>&copy; {new Date().getFullYear()} Kablan.nl - All Rights Reserved</p>
     <div class="footer-links">
       <a href="/projects">Projects</a>
+      <a href="/about">About</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="https://kable.kablan.nl" target="_blank">Kable Launcher</a>
       <a href="https://luuk.kablan.nl" target="_blank">Portfolio</a>
       <a href="https://luuks-lab.kablan.nl" target="_blank">Blog</a>
     </div>
@@ -382,9 +386,15 @@
   }
   
   .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
+  }
+  
+  .features-grid > * {
+    flex: 1 1 280px;
+    max-width: 350px;
   }
   
   .feature-card {
@@ -540,5 +550,10 @@
       font-size: 0.75rem;
       padding: 0.375rem 1rem;
     }
+    /* Reduce heavy animation and spacing on very small screens */
+    .bg-gradient, .bg-overlay { display: none; }
+    .hero { padding: 2rem 1rem; }
+    .hero-title { font-size: clamp(1.75rem, 8vw, 2.5rem); }
+    .btn-primary, .btn-secondary, .btn-outline { font-size: 1rem; padding: 0.75rem 1rem; }
   }
 </style>

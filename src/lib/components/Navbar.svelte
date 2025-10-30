@@ -1,3 +1,6 @@
+<!-- @component
+no description yet
+-->
 <script lang="ts">
   import { page } from '$app/stores';
   
@@ -6,33 +9,22 @@
   
   const navGroups = [
     { 
-      name: 'Portfolio', 
-      path: '/#portfolio',
-      children: [
-        { name: 'Professional Work', path: 'https://luuk.kablan.nl' }
-      ]
+      name: 'About', 
+      path: '/about',
+      children: []
     },
     { 
-      name: 'Tools', 
-      path: '/#tools',
-      children: [
-        { name: 'Luuk Ahead', path: 'https://luukahead.kablan.nl' },
-        { name: 'Lucky Tab', path: 'https://luckytab.kablan.nl' },
-        { name: 'Firefox New Tab', path: 'https://new-tab.firefox.kablan.nl' }
-      ]
-    },
-    { 
-      name: 'Minecraft', 
-      path: '/#minecraft',
-      children: [
-        { name: 'Kable Launcher', path: 'https://kable.kablan.nl' },
-        { name: 'Varint Converter', path: 'https://varint.kablan.nl' }
-      ]
+      name: 'Projects', 
+      path: '/projects',
+      children: []
     },
     { 
       name: 'More', 
-      path: '/projects',
-      children: []
+      path: '#',
+      children: [
+        { name: 'Privacy Policy', path: '/privacy' },
+        { name: 'Terms of Service', path: '/terms' }
+      ]
     }
   ];
   
@@ -44,7 +36,7 @@
 <nav class="navbar">
   <div class="navbar-container">
     <a href="/" class="navbar-brand gradient-primary-secondary">
-      <span class="brand-text">Kablan</span>
+      <span class="brand-text">Kablan Home</span>
     </a>
     
     <button 
@@ -72,9 +64,8 @@
           {#if group.children.length > 0 && expandedGroups[group.name]}
             <div class="nav-dropdown">
               {#each group.children as child}
-                <a href={child.path} class="nav-dropdown-link" target="_blank" rel="noopener noreferrer">
+                <a href={child.path} class="nav-dropdown-link">
                   {child.name}
-                  <i class="fa-solid fa-external-link-alt"></i>
                 </a>
               {/each}
             </div>
@@ -209,11 +200,6 @@
   .nav-dropdown-link:hover {
     background: rgba(139, 92, 246, 0.15);
     color: var(--primary-300);
-  }
-  
-  .nav-dropdown-link i {
-    font-size: 0.75rem;
-    opacity: 0.6;
   }
   
   @media (max-width: 768px) {

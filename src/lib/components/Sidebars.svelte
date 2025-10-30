@@ -1,26 +1,37 @@
+<!-- @component
+no description yet
+-->
 <script lang="ts">
+  import { consent } from '$lib/stores/consent';
+  import { derived } from 'svelte/store';
+
   // Number of ad units to display per sidebar
   const adCount = 4;
+
+  // derived boolean to show ads only when consent === 'granted'
+  const showAds = derived(consent, $c => $c === 'granted');
 </script>
 
 <!-- Left Sidebar -->
 <aside class="sidebar sidebar-left">
   <div class="sidebar-content">
     {#each Array(adCount) as _, i}
-      <div class="ad-unit">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8329850616808451"
-             crossorigin="anonymous"></script>
-        <!-- KableVertical -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-8329850616808451"
-             data-ad-slot="3777214661"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
+   <div class="ad-unit">
+     {#if $showAds}
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8329850616808451"
+      crossorigin="anonymous"></script>
+    <!-- KableVertical -->
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-8329850616808451"
+      data-ad-slot="3777214661"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+     {/if}
+   </div>
     {/each}
   </div>
 </aside>
