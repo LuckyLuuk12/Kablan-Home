@@ -1,6 +1,7 @@
 <script lang="ts">
   import Navbar from "$lib/components/Navbar.svelte";
   import Sidebars from "$lib/components/Sidebars.svelte";
+  import InlineAd from "$lib/components/InlineAd.svelte";
   import { onMount } from 'svelte';
   
   let scrollY = 0;
@@ -112,6 +113,9 @@
       </div>
     </div>
   </section>
+  
+  <!-- Inline Ad (mobile only - between Features and CTA) -->
+  <InlineAd />
   
   <!-- CTA Section -->
   <section class="cta">

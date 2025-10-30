@@ -5,8 +5,8 @@ no description yet
   import { consent } from '$lib/stores/consent';
   import { derived } from 'svelte/store';
 
-  // Number of ad units to display per sidebar
-  const adCount = 4;
+  // Reduced number of ad units per sidebar (was 4, now 2)
+  const adCount = 2;
 
   // derived boolean to show ads only when consent === 'granted'
   const showAds = derived(consent, $c => $c === 'granted');

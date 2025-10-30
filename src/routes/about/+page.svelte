@@ -5,6 +5,7 @@
 
 <script lang="ts">
   import Navbar from '$lib/components/Navbar.svelte';
+  import InlineAd from '$lib/components/InlineAd.svelte';
 </script>
 
 <Navbar />
@@ -99,6 +100,9 @@
           </div>
         </div>
       </div>
+
+      <!-- Inline Ad (mobile only - between project cards and contact) -->
+      <InlineAd />
 
       <div class="info-card contact-card">
         <div class="card-icon">
