@@ -1,3 +1,6 @@
+<!-- @component
+no description yet
+-->
 <script lang="ts">
   import { consent } from '$lib/stores/consent';
   import { onMount } from 'svelte';
